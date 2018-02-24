@@ -131,7 +131,7 @@ while(resp=='s'){
             if(nuevo.contains(e)){
                 //CD
                 String cd=nuevo.split(e)[1] ;
-
+                      
                 
                 
             }
