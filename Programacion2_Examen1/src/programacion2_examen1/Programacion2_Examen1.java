@@ -60,7 +60,7 @@ while(resp=='s'){
         System.out.print(usuario+"/"+archivos.get(i).getNombre()+" ");
        
         nuevo=sc.next();
-        String a="mkdir ",b=".txt",c=".exec",d="cd..",e="cd ",f="del",g="Is",h="mod",k="exec";
+        String a="mkdir ",b=".txt",c=".exec",d="cd..",e="cd",f="del",g="Is",h="mod",k="exec";
         if(nuevo.contains(a)){
             
              //crear carpeta
@@ -119,6 +119,7 @@ while(resp=='s'){
             
             
         }
+        }
         if(nuevo.contains(k)){
             //
             String exec=nuevo.split(k)[1] ;
@@ -128,7 +129,10 @@ while(resp=='s'){
                 
             }
             if(nuevo.contains(e)){
-                String exec=nuevo.split(e)[1] ;
+                //CD
+                String cd=nuevo.split(e)[1] ;
+
+                
                 
             }
         
@@ -155,7 +159,7 @@ while(resp=='s'){
     }
     }
 }
-}
+
 
 
         
