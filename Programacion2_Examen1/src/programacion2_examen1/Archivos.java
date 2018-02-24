@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author KATHERINE
  */
-public class Archivos {
+public abstract class Archivos {
     private String nombre;
     private int tamaño;
     private Date fechacreacion;
@@ -67,6 +67,8 @@ public class Archivos {
     public String toString() {
         return "Archivos{" + "nombre=" + nombre + ", tama\u00f1o=" + tamaño + ", fechacreacion=" + fechacreacion + ", fechamodificacion=" + fechamodificacion + '}';
     }
+    public abstract Date modificar();
+    
     
     
     

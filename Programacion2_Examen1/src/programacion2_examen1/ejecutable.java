@@ -46,6 +46,13 @@ public class ejecutable extends Archivos{
     public String toString() {
         return "ejecutable{" + "texto=" + texto + ", sistema_operativo=" + sistema_operativo + '}';
     }
+
+    @Override
+    public Date modificar() {
+       Date fecha=new Date();
+        return fecha;
+        
+    }
     
     
 }

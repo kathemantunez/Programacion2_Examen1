@@ -37,6 +37,13 @@ public class archivo_texto extends Archivos{
         return "archivo_texto{" + "nombrearchivotext=" + contenido + '}';
     }
 
+    @Override
+    public Date modificar() {
+       Date fecha=new Date();
+        return fecha;
+        
+    }
+
     
     
     

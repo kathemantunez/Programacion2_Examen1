@@ -37,6 +37,14 @@ public class carpeta extends Archivos{
     public String toString() {
         return "carpeta{" + "listaarchivos=" + listaarchivos + '}';
     }
+
+    @Override
+    public Date modificar() {
+       
+        Date fecha=new Date();
+        return fecha;
+        
+    }
      
     
     

@@ -20,18 +20,21 @@ static Scanner sc=new Scanner(System.in);
 static ArrayList list=new ArrayList();
 static ArrayList<Archivos> archivos=new ArrayList();
 static ArrayList<carpeta> Carpeta=new ArrayList();
+static ArrayList<archivo_texto> archivostext=new ArrayList();
 
 //static Date fechacreacion;
 //static Date fechamodificacion;
 static Date fechacreacion=new Date();
 static Date fechamodificacion=new Date();
 static carpeta carpeta =new carpeta();
-static String comando1="mkdir",comando2="cat";
+static archivo_texto text=new archivo_texto();
+//static String comando1="mkdir",comando2="cat";
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //------------------NO DEJAR ESPACIOS ESRE COMANDOS-----------------
          carpeta root = new carpeta();
         carpeta actual;
         actual = root;
@@ -46,19 +49,18 @@ static String comando1="mkdir",comando2="cat";
         System.out.println("Capacidad de bytes");
         int bytes=sc.nextInt();
         Date fecha1=fechacreacion;
-        System.out.println(fecha1);
         String opcion1="";
 //        
         
 ////crear capetaRaiz
+while(resp=='s'){
         archivos.add(new carpeta("root", bytes, fechacreacion, fechamodificacion, actual));
         for (int i = 0; i < archivos.size(); i++) {
             
-        System.out.print(usuario+"/"+archivos.get(i).getNombre());
-        
-//        while(resp=='s'){
+        System.out.print(usuario+"/"+archivos.get(i).getNombre()+" ");
+       
         nuevo=sc.next();
-        String a="mkdir",b=".txt",c=".exec",d="cd..",e="cd",f="del",g="Is";
+        String a="mkdir ",b=".txt",c=".exec",d="cd..",e="cd ",f="del",g="Is",h="mod",k="exec";
         if(nuevo.contains(a)){
             
              //crear carpeta
@@ -69,6 +71,7 @@ static String comando1="mkdir",comando2="cat";
         }
         if(nuevo.contains(b)){
             //crear archivo de texto
+            //no dejar espacios
             String nom=nuevo.split(b)[0];
             String nombretxt=nom.split("cat")[1];
             Date fecha=new Date();;
@@ -97,6 +100,38 @@ static String comando1="mkdir",comando2="cat";
             archivos.add(new ejecutable(cadena, sistemop, nombrexec,10,fecha, fecha, actual));
             
         }
+        if(nuevo.contains(h)){
+            //modificar
+            String mod=nuevo.split(h)[1] ;
+            for (int j = 0; j < archivos.size(); j++) {
+                if(Carpeta.get(i).getNombre().equals(mod)){
+                    Date fechanueva=carpeta.modificar();
+                    ((carpeta)Carpeta.get(i)).setFechamodificacion(fechanueva);
+//                   
+                }
+                if(archivostext.get(i).getNombre().equals(mod)){
+                    System.out.println("ingrese nuevo contenido de texto");
+                    String newtext=sc.next();
+                     Date fechanueva=carpeta.modificar();
+                     archivostext.get(i).setFechamodificacion(fechanueva);
+                     
+                }
+            
+            
+        }
+        if(nuevo.contains(k)){
+            //
+            String exec=nuevo.split(k)[1] ;
+        }
+            if(nuevo.contains(d)){
+                
+                
+            }
+            if(nuevo.contains(e)){
+                String exec=nuevo.split(e)[1] ;
+                
+            }
+        
         if(nuevo.contains(f)){
             //eliminar archivo
              String ar=nuevo.split(f)[1] ;
@@ -117,8 +152,9 @@ static String comando1="mkdir",comando2="cat";
         
         
     }
-
     }
+    }
+}
 }
 
 
